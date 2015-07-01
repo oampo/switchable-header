@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="switchableHeader">
+    <title>Switchable Header</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <div ng-controller="HeaderFooter">
+        <header ng-if="$route.current.controller == 'Page1'" ng-include="'partials/header1.html'">
+        </header>
+
+        <header ng-if="$route.current.controller == 'Page2'" ng-include="'partials/header2.html'">
+        </header>
+
+        <div ng-view></div>
+    </div>
+</html>
